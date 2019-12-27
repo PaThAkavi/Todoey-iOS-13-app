@@ -11,7 +11,7 @@ import UIKit
 class ToDoListViewController: UITableViewController {
 
     var itemArray = [Item]()
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")          //location where the data file is stored (.plist fomat)
 //    let defaults = UserDefaults.standard  //used to persist "small" data even if app terminates
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class ToDoListViewController: UITableViewController {
         let item = itemArray[indexPath.row]
         cell.textLabel?.text = item.title
         
-        cell.accessoryType = item.done ? .checkmark : .none
+        cell.accessoryType = item.done ? .checkmark : .none     //'swift ternary operator' in action
         
         return cell
     }
