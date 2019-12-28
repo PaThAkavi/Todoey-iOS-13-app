@@ -17,6 +17,7 @@ class ToDoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(dataFilePath!)
         // Do any additional setup after loading the view.
 //        let newItem = Item()
 //        newItem.title = "Find Mike"
