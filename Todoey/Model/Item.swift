@@ -2,14 +2,16 @@
 //  Item.swift
 //  Todoey
 //
-//  Created by Avaneesh Pathak on 27/12/19.
-//  Copyright © 2019 App Brewery. All rights reserved.
+//  Created by Avaneesh Pathak on 09/02/20.
+//  Copyright © 2020 App Brewery. All rights reserved.
 //
 
 import Foundation
+import RealmSwift
 
-class Item: Codable {
-    var title: String = ""
-    var done: Bool = false
-
+class Item: Object {
+    @objc dynamic var title = ""
+    @objc dynamic var done = false
+    @objc dynamic var dateCreated: Date?
+    var parentCategory = LinkingObjects(fromType: Category.self, property: "items") //many-one
 }
